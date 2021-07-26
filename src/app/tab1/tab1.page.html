@@ -1,17 +1,59 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Estandar
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-grid>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <ion-row>
+      <ion-col>
+        <ion-input disabled [(ngModel)]="numeroConcatenar"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+
+      <ion-col><ion-button size="large" expand="full" color="medium">%</ion-button></ion-col>
+      <ion-col><ion-button size="large" expand="full" color="medium">CE</ion-button></ion-col>
+      <ion-col><ion-button size="large" expand="full" color="medium" (click)="metodoC();">C</ion-button></ion-col>
+      <ion-col><ion-button size="large" expand="full" color="medium">del</ion-button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><ion-button size="large" expand="full" color="light">1/x</ion-button></ion-col>
+      <ion-col><ion-button size="large" expand="full" color="light">x2</ion-button></ion-col>
+      <ion-col><ion-button size="large" expand="full" color="light">sqrt</ion-button></ion-col>
+      <ion-col><ion-button size="large" expand="full" color="light" (click)="generarOperacion('/')">/</ion-button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><ion-button size="large" expand="full" color="light" (click)="concatenarNumero('7');">7</ion-button></ion-col>
+      <ion-col><ion-button size="large" expand="full" color="light" (click)="concatenarNumero('8');" >8</ion-button></ion-col>
+      <ion-col><ion-button size="large" expand="full" color="light" (click)="concatenarNumero('9');" >9</ion-button></ion-col>
+      <ion-col><ion-button size="large" expand="full" color="light" (click)="generarOperacion('*')" >x</ion-button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><ion-button size="large" expand="full" color="light" (click)="concatenarNumero('4');">4</ion-button></ion-col>
+      <ion-col><ion-button size="large" expand="full" color="light" (click)="concatenarNumero('5');">5</ion-button></ion-col>
+      <ion-col><ion-button size="large" expand="full" color="light" (click)="concatenarNumero('6');">6</ion-button></ion-col>
+      <ion-col><ion-button size="large" expand="full" color="light" (click)="generarOperacion('-')">-</ion-button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><ion-button size="large" expand="full" color="light" (click)="concatenarNumero('1');">1</ion-button></ion-col>
+      <ion-col><ion-button size="large" expand="full" color="light"(click)="concatenarNumero('2');">2</ion-button></ion-col>
+      <ion-col><ion-button size="large" expand="full" color="light" (click)="concatenarNumero('3');">3</ion-button></ion-col>
+      <ion-col><ion-button size="large" expand="full" color="light" (click)="generarOperacion('+')">+</ion-button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><ion-button size="large" expand="full" color="light">+/-</ion-button></ion-col>
+      <ion-col><ion-button size="large" expand="full" color="light" (click)="concatenarNumero('0');">0</ion-button></ion-col>
+      <ion-col><ion-button size="large" expand="full" color="light">,</ion-button></ion-col>
+      <ion-col><ion-button size="large" expand="full" color="light"(click)="generarOperacion('=')">=</ion-button></ion-col>
+    </ion-row>
+
+
+  </ion-grid>
+
+
 </ion-content>

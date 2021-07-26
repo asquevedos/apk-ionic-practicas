@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Producto } from '../model/Producto';
+import { ProductoServiceService } from '../services/producto-service.service';
 
 @Component({
   selector: 'app-tab3',
@@ -7,6 +9,19 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+  listaProductos: Producto[] =[];
+
+  constructor(private productoService: ProductoServiceService) {}
+
+  ionViewDidEnter(){
+    this.obtenerProductos();
+  }
+
+  obtenerProductos(){
+    this.productoService.listarProductos().subscribe((res: any) =>{
+        this.listaProductos=res;
+    } );
+  }
+
 
 }
